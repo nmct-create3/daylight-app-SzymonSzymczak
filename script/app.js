@@ -30,6 +30,9 @@ const updateSun = function (procentDone) {
 
 }
 
+const updateSunEveryMinute = setInterval(function () {
+	getAPI(50.8027841, 3.2097454);
+}, 60 * 1000);
 
 // 4 Zet de zon op de juiste plaats en zorg ervoor dat dit iedere minuut gebeurt.
 let placeSunAndStartMoving = (totalMinutes, sunrise) => {
@@ -106,4 +109,8 @@ let getAPI = (lat, lon) => {
 document.addEventListener('DOMContentLoaded', function () {
 	// 1 We will query the API with longitude and latitude.
 	getAPI(50.8027841, 3.2097454);
+	const updateSunEveryMinute = setInterval(function () {
+		getAPI(50.8027841, 3.2097454);
+		console.log("updated")
+	}, 60 * 1000);
 });
